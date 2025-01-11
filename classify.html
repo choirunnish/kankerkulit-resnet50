@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <style>
-      /* Ensures the background covers the entire screen */
       html, body {
         height: 100%;
         margin: 0;
@@ -15,73 +14,69 @@
       }
 
       body {
-        background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); /* Gradient colors */
-        background-size: 400% 400%; /* Smooth gradient transition */
-        animation: gradient 15s ease infinite; /* Animate gradient movement */
+        background-color: #ffc0cb; /* Pink muda */
         font-family: 'Work Sans', sans-serif;
-        display: flex; /* Aligns content to center */
+        display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh; /* Full height of the viewport */
+        height: 100vh;
         text-align: center;
-        color: white;
+        color: black;
       }
 
-      /* Animation keyframes for background gradient */
-      @keyframes gradient {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
-
-      /* Image styling */
       img {
         max-width: 300px;
         max-height: 300px;
       }
 
       h1 {
-        font-size: 2rem;
-        text-transform: uppercase;
-        margin-bottom: 10px;
+        font-size: 40px;
+        font-weight: bold;
       }
 
       p {
-        font-size: 1.5rem;
+        font-size: 35px;
         font-weight: bold;
-        margin-bottom: 20px;
       }
 
       .prediction {
-        color: yellow;
+        color: black;
         font-size: 1.8rem;
         margin-top: 10px;
       }
 
       .accuracy {
         font-size: 1.8rem;
-        color: whitesmoke;
+        color: black;
+        font-weight: bold;
+        margin-bottom: 40px;
       }
 
-      .button {
-        margin-top: 20px;
+      #back_button {
+        background-color: #333333;
+        color: #ffffff;
+        font-size: 25px;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        height: 60px;
+        transition: background-color 0.3s ease;
+        font-weight: bold;
+        margin-top: 40px;
+      }
+
+      #back_button:hover {
+        background-color: #555555;
       }
     </style>
 </head>
 <body>
-    <!-- Main Content -->
     <section class="section">
       <div class="container">
         <h1 class="title">Deteksi Penyakit Kanker Kulit</h1>
-        <p class="subsubtitle">
-          <strong>Choirunnisa Hasna</strong>
-        </p>
+        <p class="subtitle"><strong>Choirunnisa Hasna</strong></p>
 
         <!-- Displaying the image -->
         <img src="{{ url_for('send_file', filename=image_file_name) }}" alt="Image">
@@ -92,13 +87,19 @@
         <!-- Predicted Label -->
         <p class="prediction">Anda diprediksi mengidap penyakit kanker kulit jenis: {{ label }}</p>
 
+        <!-- Keterangan kategori -->
+        <p class="prediction" style="color: black; font-weight: bold;">
+          Kategori: <strong>{{ category }}</strong>
+        </p>
+        
+
         <!-- Confidence -->
         <h2 class="accuracy">
           Hasil Prediksi: <span>{{ prob }}%</span>
         </h2>
 
         <!-- Link back to home -->
-        <a href="/" class="button is-black is-inverted is-outlined">Kembali ke Beranda</a>
+        <a href="/" id="back_button">Kembali ke Beranda</a>
       </div>
     </section>
 
