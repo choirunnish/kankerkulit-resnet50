@@ -35,21 +35,26 @@ def classify(model, image_path):
 
     # Make prediction
     probabilities = model.predict(preprocessed_image)
-    
+
     # Get the highest probability and the predicted class
     confidence = np.max(probabilities) * 100
     predicted_class = np.argmax(probabilities, axis=1)[0]
     class_labels = ['Actinic Keratosis', 'Basal Cell Carcinoma', 'Benign Keratosis Lesion', 'Dermatofibroma', 'Melanoma', 'Melanocytic Nevus', 'Squamous Cell Carcinoma', 'Vascular Lesion']
-    
-    # Set a threshold to detect non-skin cancer images
-    threshold = 60  # Confidence threshold in percentage
 
-    if confidence < threshold:
-        label = "Gambar bukan kanker kulit atau prediksi tidak dapat dilakukan dengan akurat"
+    # Mapping for categories
+    benign_labels = ['Benign Keratosis Lesion', 'Dermatofibroma', 'Melanocytic Nevus']
+    malignant_labels = ['Actinic Keratosis', 'Basal Cell Carcinoma', 'Melanoma', 'Squamous Cell Carcinoma', 'Vascular Lesion']
+
+    # Determine category
+    label = class_labels[predicted_class]
+    if label in benign_labels:
+        category = "jinak (benign)"
+    elif label in malignant_labels:
+        category = "ganas (malignant)"
     else:
-        label = class_labels[predicted_class]
-    
-    return label, confidence
+        category = "tidak diketahui"
+
+    return label, confidence, category
 
 # Home page
 @app.route("/")
@@ -66,11 +71,15 @@ def upload_file():
     upload_image_path = os.path.join(UPLOAD_FOLDER, file.filename)
     file.save(upload_image_path)
 
-    label, confidence = classify(resnet_model, upload_image_path)
+    label, confidence, category = classify(resnet_model, upload_image_path)
     confidence = round(confidence, 2)
 
     return render_template(
-        "classify.html", image_file_name=file.filename, label=label, prob=confidence
+        "classify.html",
+        image_file_name=file.filename,
+        label=label,
+        prob=confidence,
+        category=category,
     )
 
 @app.route("/classify/<filename>")
