@@ -18,3 +18,5 @@ SQLAlchemy==2.0.9
 typing_extensions==4.5.0
 Werkzeug==2.2.3
 WTForms==3.0.1
+absl-py>=1.4.0
+tensorflow==2.13.0
