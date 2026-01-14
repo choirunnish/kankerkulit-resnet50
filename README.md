@@ -64,6 +64,9 @@ Aplikasi web dibangun menggunakan HTML dan CSS sebagai front-end, serta Flask (P
 Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang diunggah akan disimpan di server, kemudian diproses dengan mengubah ukuran menjadi 224×224 piksel dan dinormalisasi ke rentang [0,1] sesuai dengan kebutuhan input model ResNet50. Selanjutnya, gambar diprediksi menggunakan model.predict().
 
 Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
+
+https://github.com/choirunnish/kankerkulit-resnet50/blob/master/Picture1.png
+
 ## Kesimpulan
 Berikut adalah kesimpulan dari hasil penelitian ini:
 - Pemodelan yang terbentuk adalah model CNN ResNet50 yang terdiri dari 152 lapisan yaitu 1 lapisan Input, 3 lapisan ZeroPadding2D, 52 lapisan Conv2D, 16 lapisan BatchNormalization, 52 lapisan Activation, 1 lapisan MaxPooling2D, 8 lapisan Add, 1 lapisan GlobalAveragePooling2D, 1 lapisan Dropout, dan 2 lapisan Dense.
