@@ -55,16 +55,7 @@ g. Setelah itu, website melakukan prediksi terhadap gambar yang telah dimasukkan
 h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis kanker kulit beserta tingkat akurasi prediksinya. 
 
 ## Evaluasi Model Confusion Matrix
-Aktual	Prediksi
-	AK	BCC	BKL	DF	MEL	NV	SCC	VASC
-AK	79	30	44	0	10	5	5	0
-BCC	29	467	55	4	22	80	6	2
-BKL	17	20	347	0	34	103	3	1
-DF	0	6	11	24	1	5	1	0
-MEL	15	22	74	2	488	302	1	0
-NV	2	19	86	1	54	2411	2	0
-SCC	8	37	19	0	7	11	44	0
-VASC	0	5	1	0	1	11	0	33
+![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
 
 
