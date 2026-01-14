@@ -56,7 +56,7 @@ g. Setelah itu, website melakukan prediksi terhadap gambar yang telah dimasukkan
 h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis kanker kulit beserta tingkat akurasi prediksinya. 
 
 ## Pembuatan Model Arsitektur Residual Network 50 
-ResNet50 adalah model deep learning yang digunakan dalam penelitian ini untuk mendeteksi kanker kulit dari citra dermoskopi. Model ini memanfaatkan transfer learning dengan bobot pra-latih dari dataset ImageNet yang terdiri dari sekitar 1,2 juta gambar dengan 1000 kategori kelas. Dengan transfer learning, model tidak perlu melatih bobot dari awal, sehingga prosesnya menjadi lebih cepat. Struktur model ResNet50 dapat dilihat pada Gambar 4.24.
+ResNet50 adalah model deep learning yang digunakan dalam penelitian ini untuk mendeteksi kanker kulit dari citra dermoskopi. Model ini memanfaatkan transfer learning dengan bobot pra-latih dari dataset ImageNet yang terdiri dari sekitar 1,2 juta gambar dengan 1000 kategori kelas. Dengan transfer learning, model tidak perlu melatih bobot dari awal, sehingga prosesnya menjadi lebih cepat. Struktur model ResNet50 dapat dilihat pada Gambar 1.
 
 ![Gambar 1](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture6.png)
 
