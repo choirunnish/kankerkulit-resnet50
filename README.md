@@ -6,6 +6,7 @@ Matrix, model menunjukkan performa yang baik pada kelas BCC, MEL, dan NV tetapi 
 
 ## Dataset
 Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. Rinciannya dipaparkan pada Tabel 1
+
 | Label Kelas | Singkatan | Kelas                       | Jumlah Gambar |
 |-------------|-----------|-----------------------------| ------------- |
 | 0           | AK        | *Actinic Keratosis*         | 867           |
@@ -61,12 +62,27 @@ Setelah membuat model CNN dan menentukan nilai masing-masing hyperparameter, mod
 
 *Gambar 4: Grafik Train dan Test Accuracy*
 
+Gambar 4 merupakan grafik performa akurasi pada data train dan data test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai akurasi yang berkisar antara 0.0 hingga 1.0. Kurva biru (train accuracy) menunjukkan akurasi model pada data pelatihan, sedangkan kurva orange (test accuracy) menunjukkan akurasi model pada data uji. 
+
+Berdasarkan Gambar 4 terlihat bahwa nilai akurasi pada data pelatihan (garis biru) terus meningkat seiring bertambahnya jumlah epoch. Hal ini menunjukkan bahwa model dapat mempelajari pola-pola pada data latih dengan baik tetapi nilai akurasi pada data uji (garis oranye) terlihat tidak stabil, naik turun dengan pola yang cukup tajam, cenderung lebih rendah dibandingkan dengan nilai akurasi pada data latih. Pola ini mengindikasikan bahwa model mengalami overfitting yaitu kondisi dimana model terlalu menghafal data latih sehingga kurang mampu bekerja dengan baik pada data data uji.
+
+![Gambar 5](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture5.png)
+
+*Gambar 5: Grafik Train dan Test Loss*
+
+Gambar 5 merupakan grafik performa loss data train dan test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai loss yang berkisar antara 20.0 hingga 2.5 menggambarkan tingkat kesalahan model dalam memprediksi data. Semakin rendah nilai loss, semakin baik performa model. Kurva biru (train loss) menunjukkan loss model pada data pelatihan, sedangkan kurva orange (test loss) menunjukkan loss model pada data uji yaitu data yang tidak digunakan untuk melatih model tetapi digunakan untuk mengevaluasi kinerja model. 
+
+Berdasarkan Gambar 5 terlihat bahwa nilai loss pada data pelatihan (kurva biru) terus menurun secara konsisten seiring bertambahnya jumlah epoch yang artinya model semakin baik dalam mempelajari pola-pola dari data latih sehingga kesalahan prediksi pada data latih semakin kecil tetapi nilai loss pada data uji (kurva orange) terlihat naik turun selama pelatihan model. Pada beberapa epoch terutama di awal pelatihan, nilai loss pada data uji lebih tinggi daripada nilai loss pada data pelatihan yang artinya model belum sepenuhnya optimal. Meski begitu, seiring bertambahnya epoch, nilai loss pada data uji cenderung menurun tetapi fluktuasinya (naik turun) masih sering terjadi. Hal ini menunjukkan bahwa model kesulitan mengenali pola pada data uji sehingga hasilnya tidak konsisten. Fluktuasi nilai loss tersebut juga mengindikasikan bahwa model terlalu fokus pada data pelatihan (overfitting), sehingga performa pada data uji belum maksimal. 
+
+
 ## Evaluasi Model Confusion Matrix
 ![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
 *Gambar 1: Confusion Matrix.*
 
-Model CNN ResNet50 menunjukkan performa terbaik pada kelas NV dengan jumlah prediksi benar paling tinggi (2411 data), diikuti oleh kelas MEL (488) dan BCC (467). Hal ini menunjukkan bahwa model sangat efektif dalam mengenali kelas-kelas tersebut. Sebaliknya, model masih sering mengalami kesalahan klasifikasi pada kelas AK, BKL, dan SCC. Kelas AK banyak salah diprediksi sebagai BKL dan BCC, sementara BKL sering tertukar dengan NV dan MEL. Kelas SCC memiliki jumlah prediksi benar yang relatif rendah dan sering keliru diprediksi sebagai BCC dan BKL. Secara keseluruhan, Confusion Matrix menunjukkan bahwa model CNN ResNet50 dapat mengklasifikasikan kelas-kelas dominan seperti NV, MEL, dan BCC dengan baik, tetapi masih memerlukan peningkatan performa pada kelas-kelas yang memiliki karakteristik visual mirip dan jumlah data yang lebih sedikit, khususnya AK, BKL, dan SCC.
+Model CNN ResNet50 menunjukkan performa terbaik pada kelas NV dengan jumlah prediksi benar paling tinggi (2411 data), diikuti oleh kelas MEL (488) dan BCC (467). Hal ini menunjukkan bahwa model sangat efektif dalam mengenali kelas-kelas tersebut. Sebaliknya, model masih sering mengalami kesalahan klasifikasi pada kelas AK, BKL, dan SCC. Kelas AK banyak salah diprediksi sebagai BKL dan BCC, sementara BKL sering tertukar dengan NV dan MEL. Kelas SCC memiliki jumlah prediksi benar yang relatif rendah dan sering keliru diprediksi sebagai BCC dan BKL. 
+
+Secara keseluruhan, Confusion Matrix menunjukkan bahwa model CNN ResNet50 dapat mengklasifikasikan kelas-kelas dominan seperti NV, MEL, dan BCC dengan baik, tetapi masih memerlukan peningkatan performa pada kelas-kelas yang memiliki karakteristik visual mirip dan jumlah data yang lebih sedikit, khususnya AK, BKL, dan SCC.
 
 ## Evaluasi Model Classification Report
 
@@ -85,10 +101,16 @@ Model CNN ResNet50 menunjukkan performa terbaik pada kelas NV dengan jumlah pred
 *Tabel 2: Classification Report*
 
 
-Evaluasi performa model CNN dilakukan menggunakan Classification Report yang mencakup metrik akurasi, precision, recall, dan f1-score untuk setiap kelas. Model mencapai akurasi keseluruhan sebesar 77%, yang menunjukkan bahwa sebagian besar prediksi sesuai dengan data aktual. Berdasarkan evaluasi per kelas, model menunjukkan performa terbaik pada kelas NV, dengan nilai precision 82%, recall 94%, dan f1-score 88%, menandakan kemampuan deteksi yang sangat baik. Kelas BCC dan VASC juga memiliki performa yang cukup baik dengan f1-score masing-masing sebesar 73% dan 76%. Sebaliknya, model masih mengalami kesulitan dalam mengenali kelas AK dan SCC, yang ditunjukkan oleh nilai f1-score rendah, masing-masing 49% dan 47%. Kelas BKL, DF, dan MEL memiliki performa sedang dengan f1-score di kisaran 60%. Secara keseluruhan, model telah mampu mendeteksi beberapa jenis kanker kulit dengan baik, khususnya NV, BCC, dan VASC, namun masih memerlukan peningkatan performa untuk kelas-kelas yang sulit dideteksi seperti AK dan SCC.
+Evaluasi performa model CNN dilakukan menggunakan Classification Report yang mencakup metrik akurasi, precision, recall, dan f1-score untuk setiap kelas. Model mencapai akurasi keseluruhan sebesar 77% yang menunjukkan bahwa sebagian besar prediksi sesuai dengan data aktual. 
+
+Berdasarkan evaluasi per kelas, model menunjukkan performa terbaik pada kelas NV, dengan nilai precision 82%, recall 94%, dan f1-score 88%, menandakan kemampuan deteksi yang sangat baik. Kelas BCC dan VASC juga memiliki performa yang cukup baik dengan f1-score masing-masing sebesar 73% dan 76%. Sebaliknya, model masih mengalami kesulitan dalam mengenali kelas AK dan SCC, yang ditunjukkan oleh nilai f1-score rendah, masing-masing 49% dan 47%. Kelas BKL, DF, dan MEL memiliki performa sedang dengan f1-score di kisaran 60%. 
+
+Secara keseluruhan, model telah mampu mendeteksi beberapa jenis kanker kulit dengan baik, khususnya NV, BCC, dan VASC, namun masih memerlukan peningkatan performa untuk kelas-kelas yang sulit dideteksi seperti AK dan SCC.
 
 ## Deployment Model ke Aplikasi Web
-Aplikasi web ini merupakan hasil deployment dari model Convolutional Neural Network (CNN) yang telah dilatih. Deployment trained model adalah proses mengintegrasikan model yang sudah ditraining ke dalam aplikasi agar dapat digunakan langsung oleh pengguna melalui antarmuka web. Model CNN yang telah dilatih disimpan dalam format .h5 (HDF5) menggunakan fungsi model.save(), yang mencakup arsitektur dan bobot model. Pada saat aplikasi dijalankan, model dimuat kembali menggunakan load_model() untuk melakukan prediksi tanpa perlu training ulang. Aplikasi web dibuat menggunakan HTML dan CSS sebagai front-end, serta Flask (Python) sebagai back-end. Flask berfungsi sebagai server yang menerima input gambar dari pengguna, memproses data, menjalankan prediksi menggunakan model CNN, dan mengirimkan hasil deteksi ke front-end. Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang diunggah akan disimpan di server, kemudian diproses dengan mengubah ukuran menjadi 224×224 piksel dan dinormalisasi ke rentang [0,1] sesuai dengan kebutuhan input model ResNet50. Selanjutnya, gambar diprediksi menggunakan model.predict(). Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
+Aplikasi web ini merupakan hasil deployment dari model Convolutional Neural Network (CNN) yang telah dilatih. Deployment trained model adalah proses mengintegrasikan model yang sudah ditraining ke dalam aplikasi agar dapat digunakan langsung oleh pengguna melalui antarmuka web. Model CNN yang telah dilatih disimpan dalam format .h5 (HDF5) menggunakan fungsi model.save(), yang mencakup arsitektur dan bobot model. Pada saat aplikasi dijalankan, model dimuat kembali menggunakan load_model() untuk melakukan prediksi tanpa perlu training ulang. Aplikasi web dibuat menggunakan HTML dan CSS sebagai front-end, serta Flask (Python) sebagai back-end. Flask berfungsi sebagai server yang menerima input gambar dari pengguna, memproses data, menjalankan prediksi menggunakan model CNN, dan mengirimkan hasil deteksi ke front-end. 
+
+Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang diunggah akan disimpan di server, kemudian diproses dengan mengubah ukuran menjadi 224×224 piksel dan dinormalisasi ke rentang [0,1] sesuai dengan kebutuhan input model ResNet50. Selanjutnya, gambar diprediksi menggunakan model.predict(). Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
 
 ![Gambar](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture1.png)
 
