@@ -58,27 +58,27 @@ h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis 
 ## Evaluasi Model Learning Curve
 Setelah membuat model CNN dan menentukan nilai masing-masing hyperparameter, model akan dilakukan proses training dan akan diperoleh nilai loss dan accuracy pada output yang berupa Learning Curve dapat dilihat pada gambar berikut
 
-![Gambar 4](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture4.png)
+![Gambar 1](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture4.png)
 
-*Gambar 4: Grafik Train dan Test Accuracy*
+*Gambar 1: Grafik Train dan Test Accuracy*
 
-Gambar 4 merupakan grafik performa akurasi pada data train dan data test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai akurasi yang berkisar antara 0.0 hingga 1.0. Kurva biru (train accuracy) menunjukkan akurasi model pada data pelatihan, sedangkan kurva orange (test accuracy) menunjukkan akurasi model pada data uji. 
+Gambar 1 merupakan grafik performa akurasi pada data train dan data test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai akurasi yang berkisar antara 0.0 hingga 1.0. Kurva biru (train accuracy) menunjukkan akurasi model pada data pelatihan, sedangkan kurva orange (test accuracy) menunjukkan akurasi model pada data uji. 
 
-Berdasarkan Gambar 4 terlihat bahwa nilai akurasi pada data pelatihan (garis biru) terus meningkat seiring bertambahnya jumlah epoch. Hal ini menunjukkan bahwa model dapat mempelajari pola-pola pada data latih dengan baik tetapi nilai akurasi pada data uji (garis oranye) terlihat tidak stabil, naik turun dengan pola yang cukup tajam, cenderung lebih rendah dibandingkan dengan nilai akurasi pada data latih. Pola ini mengindikasikan bahwa model mengalami overfitting yaitu kondisi dimana model terlalu menghafal data latih sehingga kurang mampu bekerja dengan baik pada data data uji.
+Berdasarkan Gambar 1 terlihat bahwa nilai akurasi pada data pelatihan (garis biru) terus meningkat seiring bertambahnya jumlah epoch. Hal ini menunjukkan bahwa model dapat mempelajari pola-pola pada data latih dengan baik tetapi nilai akurasi pada data uji (garis oranye) terlihat tidak stabil, naik turun dengan pola yang cukup tajam, cenderung lebih rendah dibandingkan dengan nilai akurasi pada data latih. Pola ini mengindikasikan bahwa model mengalami overfitting yaitu kondisi dimana model terlalu menghafal data latih sehingga kurang mampu bekerja dengan baik pada data data uji.
 
-![Gambar 5](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture5.png)
+![Gambar 2](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture5.png)
 
-*Gambar 5: Grafik Train dan Test Loss*
+*Gambar 2: Grafik Train dan Test Loss*
 
-Gambar 5 merupakan grafik performa loss data train dan test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai loss yang berkisar antara 20.0 hingga 2.5 menggambarkan tingkat kesalahan model dalam memprediksi data. Semakin rendah nilai loss, semakin baik performa model. Kurva biru (train loss) menunjukkan loss model pada data pelatihan, sedangkan kurva orange (test loss) menunjukkan loss model pada data uji yaitu data yang tidak digunakan untuk melatih model tetapi digunakan untuk mengevaluasi kinerja model. 
+Gambar 2 merupakan grafik performa loss data train dan test saat pelatihan berlangsung selama 60 epoch. Sumbu horizontal (x) menunjukkan jumlah epoch yaitu iterasi pelatihan model, sedangkan sumbu vertikal (y) menunjukkan nilai loss yang berkisar antara 20.0 hingga 2.5 menggambarkan tingkat kesalahan model dalam memprediksi data. Semakin rendah nilai loss, semakin baik performa model. Kurva biru (train loss) menunjukkan loss model pada data pelatihan, sedangkan kurva orange (test loss) menunjukkan loss model pada data uji yaitu data yang tidak digunakan untuk melatih model tetapi digunakan untuk mengevaluasi kinerja model. 
 
-Berdasarkan Gambar 5 terlihat bahwa nilai loss pada data pelatihan (kurva biru) terus menurun secara konsisten seiring bertambahnya jumlah epoch yang artinya model semakin baik dalam mempelajari pola-pola dari data latih sehingga kesalahan prediksi pada data latih semakin kecil tetapi nilai loss pada data uji (kurva orange) terlihat naik turun selama pelatihan model. Pada beberapa epoch terutama di awal pelatihan, nilai loss pada data uji lebih tinggi daripada nilai loss pada data pelatihan yang artinya model belum sepenuhnya optimal. Meski begitu, seiring bertambahnya epoch, nilai loss pada data uji cenderung menurun tetapi fluktuasinya (naik turun) masih sering terjadi. Hal ini menunjukkan bahwa model kesulitan mengenali pola pada data uji sehingga hasilnya tidak konsisten. Fluktuasi nilai loss tersebut juga mengindikasikan bahwa model terlalu fokus pada data pelatihan (overfitting), sehingga performa pada data uji belum maksimal. 
+Berdasarkan Gambar 2 terlihat bahwa nilai loss pada data pelatihan (kurva biru) terus menurun secara konsisten seiring bertambahnya jumlah epoch yang artinya model semakin baik dalam mempelajari pola-pola dari data latih sehingga kesalahan prediksi pada data latih semakin kecil tetapi nilai loss pada data uji (kurva orange) terlihat naik turun selama pelatihan model. Pada beberapa epoch terutama di awal pelatihan, nilai loss pada data uji lebih tinggi daripada nilai loss pada data pelatihan yang artinya model belum sepenuhnya optimal. Meski begitu, seiring bertambahnya epoch, nilai loss pada data uji cenderung menurun tetapi fluktuasinya (naik turun) masih sering terjadi. Hal ini menunjukkan bahwa model kesulitan mengenali pola pada data uji sehingga hasilnya tidak konsisten. Fluktuasi nilai loss tersebut juga mengindikasikan bahwa model terlalu fokus pada data pelatihan (overfitting), sehingga performa pada data uji belum maksimal. 
 
 
 ## Evaluasi Model Confusion Matrix
 ![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
-*Gambar 1: Confusion Matrix.*
+*Gambar 3: Confusion Matrix.*
 
 Model CNN ResNet50 menunjukkan performa terbaik pada kelas NV dengan jumlah prediksi benar paling tinggi (2411 data), diikuti oleh kelas MEL (488) dan BCC (467). Hal ini menunjukkan bahwa model sangat efektif dalam mengenali kelas-kelas tersebut. Sebaliknya, model masih sering mengalami kesalahan klasifikasi pada kelas AK, BKL, dan SCC. Kelas AK banyak salah diprediksi sebagai BKL dan BCC, sementara BKL sering tertukar dengan NV dan MEL. Kelas SCC memiliki jumlah prediksi benar yang relatif rendah dan sering keliru diprediksi sebagai BCC dan BKL. 
 
@@ -112,11 +112,15 @@ Aplikasi web ini merupakan hasil deployment dari model Convolutional Neural Netw
 
 Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang diunggah akan disimpan di server, kemudian diproses dengan mengubah ukuran menjadi 224×224 piksel dan dinormalisasi ke rentang [0,1] sesuai dengan kebutuhan input model ResNet50. Selanjutnya, gambar diprediksi menggunakan model.predict(). Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
 
-![Gambar](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture1.png)
+![Gambar4](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture1.png)
+
+*Gambar 4: Halaman Utama Website*
 
 Halaman utama website dibuat sederhana agar pengguna mudah melakukan deteksi kanker kulit. Di halaman ini ditampilkan nama website “Deteksi Penyakit Kanker Kulit” serta tombol “Unggah Gambar” untuk memilih gambar kulit yang akan diperiksa. Setelah gambar diunggah, pengguna dapat menekan tombol “Kirim” untuk memulai proses deteksi.
 
-![Gambar1](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture2.png)
+![Gambar5](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture2.png)
+
+*Gambar 5: Halaman Hasil Prediksi Gambar*
 
 Hasil deteksi akan ditampilkan pada halaman berikutnya yang berisi informasi jenis kanker kulit yang terdeteksi, tingkat keparahan, dan persentase kepercayaan prediksi. Tersedia juga tombol “Kembali ke Beranda” untuk mengunggah gambar lain atau kembali ke halaman utama. Secara keseluruhan, tampilan website dirancang sederhana dan mudah dipahami oleh pengguna.
 
