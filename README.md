@@ -57,6 +57,8 @@ h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis 
 ## Evaluasi Model Confusion Matrix
 ![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
+*Gambar 1: Confusion Matrix.*
+
 Model CNN ResNet50 menunjukkan performa terbaik pada kelas NV dengan jumlah prediksi benar paling tinggi (2411 data), diikuti oleh kelas MEL (488) dan BCC (467). Hal ini menunjukkan bahwa model sangat efektif dalam mengenali kelas-kelas tersebut. Sebaliknya, model masih sering mengalami kesalahan klasifikasi pada kelas AK, BKL, dan SCC. Kelas AK banyak salah diprediksi sebagai BKL dan BCC, sementara BKL sering tertukar dengan NV dan MEL. Kelas SCC memiliki jumlah prediksi benar yang relatif rendah dan sering keliru diprediksi sebagai BCC dan BKL. Secara keseluruhan, Confusion Matrix menunjukkan bahwa model CNN ResNet50 dapat mengklasifikasikan kelas-kelas dominan seperti NV, MEL, dan BCC dengan baik, tetapi masih memerlukan peningkatan performa pada kelas-kelas yang memiliki karakteristik visual mirip dan jumlah data yang lebih sedikit, khususnya AK, BKL, dan SCC.
 
 ## Evaluasi Model Classification Report
