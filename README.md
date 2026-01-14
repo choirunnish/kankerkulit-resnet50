@@ -6,16 +6,16 @@ Matrix, model menunjukkan performa yang baik pada kelas BCC, MEL, dan NV tetapi 
 
 ## Dataset
 Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. Rinciannya dipaparkan pada Tabel 1
-| Label Kelas | Singkatan | Kelas                       |
-|-------------|-----------|-----------------------------|
-| 0           | AK        | *Actinic Keratosis*         |
-| 1           | BCC       | *Basal Cell Carcinoma*      |
-| 2           | BKL       | *Benign Keratosis Lesion*   |
-| 3           | DF        | *Dermatofibroma*            |
-| 4           | MEL       | *Melanoma*                  |
-| 5           | NV        | *Melanocytic Nevus*         |
-| 6           | SCC       | *Squamous Cell Carcinoma*   |
-| 7           | VASC      | *Vascular Lesion*           |
+| Label Kelas | Singkatan | Kelas                       | Jumlah Gambar |
+|-------------|-----------|-----------------------------| ------------- |
+| 0           | AK        | *Actinic Keratosis*         | 867           |
+| 1           | BCC       | *Basal Cell Carcinoma*      | 3323          |
+| 2           | BKL       | *Benign Keratosis Lesion*   | 2624          |
+| 3           | DF        | *Dermatofibroma*            | 239           |
+| 4           | MEL       | *Melanoma*                  | 4522          |
+| 5           | NV        | *Melanocytic Nevus*         | 12875         |
+| 6           | SCC       | *Squamous Cell Carcinoma*   | 628           |
+| 7           | VASC      | *Vascular Lesion*           | 253           |
 
 *Tabel 1: Distribusi Citra.*
 
