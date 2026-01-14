@@ -5,7 +5,7 @@ Kanker kulit merupakan pertumbuhan sel tidak normal pada kulit yang disebabkan o
 Matrix, model menunjukkan performa yang baik pada kelas BCC, MEL, dan NV tetapi masih perlu perbaikan dalam mengidentifikasi kelas AK, SCC, dan BKL. Berdasarkan Classification Report, diperoleh nilai akurasi keseluruhan sebesar 77%. Sebuah aplikasi web berbasis model ResNet50 berhasil dibuat dan dapat berjalan dengan normal
 
 ## Dataset
-Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. 
+Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. Rinciannya dipaparkan pada Tabel 1
 | Label Kelas | Singkatan | Kelas                       |
 |-------------|-----------|-----------------------------|
 | 0           | AK        | *Actinic Keratosis*         |
@@ -17,7 +17,7 @@ Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk cit
 | 6           | SCC       | *Squamous Cell Carcinoma*   |
 | 7           | VASC      | *Vascular Lesion*           |
 
-*Table 1: Distribusi Citra.*
+*Tabel 1: Distribusi Citra.*
 
 
 ## Kesimpulan
