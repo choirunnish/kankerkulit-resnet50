@@ -26,20 +26,20 @@ tahun 2019.
 2. Memasukkan data citra dermoskopi kanker kulit ke Google Colab.
 3. Melakukan preprocessing data
 Citra dermoskopi memiliki banyak noise yang dapat memengaruhi hasil klasifikasi sehingga diperlukan preprocessing data untuk memperbaiki masalah pada citra dermoskopi. Langkah-langkah preprocessing data dijelaskan sebagai berikut:
-  - Melakukan resize data citra dari ukuran asli 1024 × 1024 piksel menjadi ukuran 224 × 224 piksel sesuai ketentuan pada arsitektur      ResNet50 secara otomatis.
+  a. Melakukan resize data citra dari ukuran asli 1024 × 1024 piksel menjadi ukuran 224 × 224 piksel sesuai ketentuan pada arsitektur      ResNet50 secara otomatis.
   b. Menghilangkan hair features menggunakan dull razor filtering.
   c. Melakukan normalisasi data citra dengan cara melakukan pembagian terhadap nilai RGB dari 0 hingga 255 dengan 255, sehingga
      didapatkan nilai RGB pada rentang antara 0 hingga 1.
   d. Melakukan labelisasi citra sesuai dengan kelasnya
-4. Membagi data menjadi dua bagian dengan perincian pembagian data yaitu 80% data train dan 20% data test.
-5. Melakukan augmentasi data.
-6. Merancang model CNN dengan arsitektur Residual Network 50 (ResNet50) yang dimana menerapkan metode transfer learning dalam            pembuatan model yang siap pakai (pre-trained model) untuk melakukan klasifikasi jenis penyakit kanker kulit.
-7. Melakukan pelatihan model dengan menggunakan data train.
-8. Melakukan evaluasi model berdasarkan Learning Curve.
-9. Melakukan visualisasi hasil evaluasi menggunakan Confusion Matrix
+5. Membagi data menjadi dua bagian dengan perincian pembagian data yaitu 80% data train dan 20% data test.
+6. Melakukan augmentasi data.
+7. Merancang model CNN dengan arsitektur Residual Network 50 (ResNet50) yang dimana menerapkan metode transfer learning dalam            pembuatan model yang siap pakai (pre-trained model) untuk melakukan klasifikasi jenis penyakit kanker kulit.
+8. Melakukan pelatihan model dengan menggunakan data train.
+9. Melakukan evaluasi model berdasarkan Learning Curve.
+10. Melakukan visualisasi hasil evaluasi menggunakan Confusion Matrix
    untuk didapatkan nilai akurasi, presisi, recall, dan F1-score.
-10. Hasil model disimpan ke dalam format h5 untuk diimplementasikan ke dalam tampilan sebuah website menggunakan framework Flask
-11. Melakukan pengujian model. Langkah-langkah pengujian model sebagai berikut:
+11. Hasil model disimpan ke dalam format h5 untuk diimplementasikan ke dalam tampilan sebuah website menggunakan framework Flask
+12. Melakukan pengujian model. Langkah-langkah pengujian model sebagai berikut:
     a. Pada tahap awal, menghidupkan server menggunakan Flask sebagai back-end dan menampilkan tampilan web pada front-end melalui           URL: http://127.0.0.1:5000.
 b. Setelah server aktif, file model .h5 diload ke memori agar dapat digunakan dalam proses deteksi.
 c. Pengguna mengunggah gambar dengan format file .jpg, .jpeg, atau .png melalui formulir yang tersedia di halaman utama. Gambar
