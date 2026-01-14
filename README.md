@@ -65,7 +65,7 @@ Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang di
 
 Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
 
-![] (https://github.com/choirunnish/kankerkulit-resnet50/blob/master/Picture1.png)
+![] (assets/Picture1.png)
 
 ## Kesimpulan
 Berikut adalah kesimpulan dari hasil penelitian ini:
