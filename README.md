@@ -6,18 +6,18 @@ Matrix, model menunjukkan performa yang baik pada kelas BCC, MEL, dan NV tetapi 
 
 ## Dataset
 Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. 
-| Label Kelas | Singkatan | Kelas  |
-|-------------|-----------|---------------------------|
-| 0           | AK        | Actinic Keratosis         |
-| 1           | BCC       | Basal Cell Carcinoma      |
-| 2           | BKL       | Benign Keratosis Lesion   |
-| 3           | DF        | Dermatofibroma            |
-| 4           | MEL       | Melanoma                  |
-| 5           | NV        | Melanocytic Nevus         |
-| 6           | SCC       | Squamous Cell Carcinoma   |
-| 7           | VASC      | Vascular Lesion           |
+| Label Kelas | Singkatan | Kelas                       |
+|-------------|-----------|-----------------------------|
+| 0           | AK        | *Actinic Keratosis*         |
+| 1           | BCC       | *Basal Cell Carcinoma*      |
+| 2           | BKL       | *Benign Keratosis Lesion*   |
+| 3           | DF        | *Dermatofibroma*            |
+| 4           | MEL       | *Melanoma*                  |
+| 5           | NV        | *Melanocytic Nevus*         |
+| 6           | SCC       | *Squamous Cell Carcinoma*   |
+| 7           | VASC      | *Vascular Lesion*           |
 
-*Table 1: Mapping from diagnosis to targets.*
+*Table 1: Distribusi Citra.*
 
 
 ## Kesimpulan
