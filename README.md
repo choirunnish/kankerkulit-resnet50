@@ -67,6 +67,14 @@ Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pa
 
 ![Gambar](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture1.png)
 
+Halaman utama website dibuat sederhana agar pengguna mudah melakukan deteksi kanker kulit. Di halaman ini ditampilkan nama website “Deteksi Penyakit Kanker Kulit” serta tombol “Unggah Gambar” untuk memilih gambar kulit yang akan diperiksa. Setelah gambar diunggah, pengguna dapat menekan tombol “Kirim” untuk memulai proses deteksi.
+
+![Gambar1](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture2.png)
+
+![Gambar2](
+
+Hasil deteksi akan ditampilkan pada halaman berikutnya, yang berisi informasi jenis kanker kulit yang terdeteksi, tingkat keparahan, dan persentase kepercayaan prediksi. Tersedia juga tombol “Kembali ke Beranda” untuk mengunggah gambar lain atau kembali ke halaman utama. Secara keseluruhan, tampilan website dirancang sederhana dan mudah dipahami oleh pengguna.
+
 ## Kesimpulan
 Berikut adalah kesimpulan dari hasil penelitian ini:
 - Pemodelan yang terbentuk adalah model CNN ResNet50 yang terdiri dari 152 lapisan yaitu 1 lapisan Input, 3 lapisan ZeroPadding2D, 52 lapisan Conv2D, 16 lapisan BatchNormalization, 52 lapisan Activation, 1 lapisan MaxPooling2D, 8 lapisan Add, 1 lapisan GlobalAveragePooling2D, 1 lapisan Dropout, dan 2 lapisan Dense.
