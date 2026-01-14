@@ -16,6 +16,7 @@ Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk cit
 | 5           | NV                                                                            | SCC*    |
 | 6           | SCC                                                                             | VASC*   |
 | 7           | VASC                                                                            | DF*     |
+
 *Table 1: Mapping from diagnosis to targets.*
 
 
