@@ -71,7 +71,6 @@ Halaman utama website dibuat sederhana agar pengguna mudah melakukan deteksi kan
 
 ![Gambar1](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture2.png)
 
-![Gambar2](
 
 Hasil deteksi akan ditampilkan pada halaman berikutnya, yang berisi informasi jenis kanker kulit yang terdeteksi, tingkat keparahan, dan persentase kepercayaan prediksi. Tersedia juga tombol “Kembali ke Beranda” untuk mengunggah gambar lain atau kembali ke halaman utama. Secara keseluruhan, tampilan website dirancang sederhana dan mudah dipahami oleh pengguna.
 
