@@ -16,7 +16,8 @@ Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk cit
 | 5           | NV        | *Melanocytic Nevus*         | 12875         |
 | 6           | SCC       | *Squamous Cell Carcinoma*   | 628           |
 | 7           | VASC      | *Vascular Lesion*           | 253           |
-Total                                                   |  25331        |
+|Total        |           |                             |  25331        |
+
 *Tabel 1: Distribusi Citra.*
 
 ## Langkah-Langkah Penelitian
