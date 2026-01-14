@@ -57,6 +57,10 @@ h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis 
 ## Evaluasi Model Learning Curve
 Setelah membuat model CNN dan menentukan nilai masing-masing hyperparameter, model akan dilakukan proses training dan akan diperoleh nilai loss dan accuracy pada output yang berupa Learning Curve dapat dilihat pada gambar berikut
 
+![Gambar 4](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture4.png)
+
+*Gambar 4: Grafik Train dan Test Accuracy*
+
 ## Evaluasi Model Confusion Matrix
 ![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
