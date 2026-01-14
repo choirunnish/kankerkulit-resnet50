@@ -54,6 +54,9 @@ g. Setelah itu, website melakukan prediksi terhadap gambar yang telah dimasukkan
    sebelumnya. Model ini akan mengidentifikasi jenis kanker kulit yang terdapat pada gambar tersebut.
 h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis kanker kulit beserta tingkat akurasi prediksinya. 
 
+## Evaluasi Model Learning Curve
+Setelah membuat model CNN dan menentukan nilai masing-masing hyperparameter, model akan dilakukan proses training dan akan diperoleh nilai loss dan accuracy pada output yang berupa Learning Curve dapat dilihat pada gambar berikut
+
 ## Evaluasi Model Confusion Matrix
 ![Gambar3](https://github.com/choirunnish/kankerkulit-resnet50/blob/master/assets/Picture3.png)
 
