@@ -54,6 +54,20 @@ g. Setelah itu, website melakukan prediksi terhadap gambar yang telah dimasukkan
    sebelumnya. Model ini akan mengidentifikasi jenis kanker kulit yang terdapat pada gambar tersebut.
 h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis kanker kulit beserta tingkat akurasi prediksinya. 
 
+## Evaluasi Model Classification Report
+
+| Kelas   | *precission* | *recall* | *f1-score* |
+|---------|--------------|----------| ---------- |
+| AK      | 53%          | 46%      | 49%        |
+| BCC     | 77%          | 70%      | 73%        |
+| BKL     | 54%          | 66%      | 60%        |
+| DF      | 77%          | 50%      | 61%        |
+| MEL     | 79%          | 54%      | 64%        |
+| NV      | 82%          | 94%      | 88%        |
+| SCC     | 71%          | 35%      | 47%        |
+| VASC    | 92%          | 65%      | 76%        |
+| Akurasi |              |          | 77%        |
+
 ## Deployment Model ke Aplikasi Web
 Aplikasi web ini merupakan hasil deployment dari model Convolutional Neural Network (CNN) yang telah dilatih. Deployment trained model adalah proses mengintegrasikan model yang sudah ditraining ke dalam aplikasi agar dapat digunakan langsung oleh pengguna melalui antarmuka web. Model CNN yang telah dilatih disimpan dalam format .h5 (HDF5) menggunakan fungsi model.save(), yang mencakup arsitektur dan bobot model. Pada saat aplikasi dijalankan, model dimuat kembali menggunakan load_model() untuk melakukan prediksi tanpa perlu training ulang. Aplikasi web dibuat menggunakan HTML dan CSS sebagai front-end, serta Flask (Python) sebagai back-end. Flask berfungsi sebagai server yang menerima input gambar dari pengguna, memproses data, menjalankan prediksi menggunakan model CNN, dan mengirimkan hasil deteksi ke front-end. Pengguna dapat mengunggah citra dermoskopi melalui halaman utama. Gambar yang diunggah akan disimpan di server, kemudian diproses dengan mengubah ukuran menjadi 224×224 piksel dan dinormalisasi ke rentang [0,1] sesuai dengan kebutuhan input model ResNet50. Selanjutnya, gambar diprediksi menggunakan model.predict(). Hasil prediksi berupa jenis kanker kulit dan tingkat probabilitas ditampilkan pada halaman hasil deteksi. Aplikasi berjalan secara lokal melalui server Flask pada alamat http://127.0.0.1:5000.
 
