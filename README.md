@@ -6,17 +6,18 @@ Matrix, model menunjukkan performa yang baik pada kelas BCC, MEL, dan NV tetapi 
 
 ## Dataset
 Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk citra dermoskopi kanker kulit yang diambil melalui situs International Imaging Skin Collaboration (ISIC) tahun 2019. ISIC adalah organisasi internasional yang menghimpun data citra dermoskopi untuk mengurangi kanker kulit. Data ISIC 2019 berjumlah 25331 data citra yang terbagi menjadi 8 kelas kanker kulit antara lain Actinic Keratosis, Basal Cell Carcinoma, Benign Keratosis Lesion, Dermatofibroma, Melanoma, Melanocytic Nevus, Squamous Cell Carcinoma, dan Vascular Lesion. 
-| 2019 Diagnosis | 2020 Diagnosis                                                              | Target  |
-|----------------|-----------------------------------------------------------------------------|---------|
-| NV             | nevus                                                                       | NV      |
-| MEL            | melanoma                                                                    | MEL     |
-| BCC            |                                                                             | BCC*    |
-| BKL            | seborrheic keratosis<br>lichenoid keratosis<br>solar lentigo<br>lentigo NOS | BKL     |
-| AK             |                                                                             | AK*     |
-| SCC            |                                                                             | SCC*    |
-| VASC           |                                                                             | VASC*   |
-| DF             |                                                                             | DF*     |
-|                | cafe-au-lait macule<br>atypical melanocytic proliferation                   | Unknown |
+| Label Kelas | Singkatan                                                              | Target  |
+|-------------|-----------------------------------------------------------------------------|---------|
+| 0           | AK                                                                      | NV      |
+| 1           | BCC                                                                    | MEL     |
+| 2           | BKL                                                                            | BCC*    |
+| 3           | DF      |
+| 4           | MEL                                                                            | AK*     |
+| 5           | NV                                                                            | SCC*    |
+| 6           | SCC                                                                             | VASC*   |
+| 7           | VASC                                                                            | DF*     |
+*Table 1: Mapping from diagnosis to targets.*
+
 
 ## Kesimpulan
 Berikut adalah kesimpulan dari hasil penelitian ini:
