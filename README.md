@@ -19,6 +19,39 @@ Data yang digunakan dalam penelitian ini adalah data sekunder yang berbentuk cit
 
 *Tabel 1: Distribusi Citra.*
 
+## Langkah-Langkah Penelitian
+Berikut tahapan analisis yang dilakukan pada penelitian ini:
+1. Mengumpulkan data berbentuk citra dermoskopi kanker kulit yang diperoleh dari situs International Imaging Skin Collaboration (ISIC)
+tahun 2019.
+2. Memasukkan data citra dermoskopi kanker kulit ke Google Colab.
+3. Melakukan preprocessing data
+Citra dermoskopi memiliki banyak noise yang dapat memengaruhi hasil klasifikasi sehingga diperlukan preprocessing data untuk memperbaiki masalah pada citra dermoskopi. Langkah-langkah preprocessing data dijelaskan sebagai berikut:
+  a. Melakukan resize data citra dari ukuran asli 1024 × 1024 piksel menjadi ukuran 224 × 224 piksel sesuai ketentuan pada arsitektur      ResNet50 secara otomatis.
+  b. Menghilangkan hair features menggunakan dull razor filtering.
+  c. Melakukan normalisasi data citra dengan cara melakukan pembagian terhadap nilai RGB dari 0 hingga 255 dengan 255, sehingga
+     didapatkan nilai RGB pada rentang antara 0 hingga 1.
+  d. Melakukan labelisasi citra sesuai dengan kelasnya
+4. Membagi data menjadi dua bagian dengan perincian pembagian data yaitu 80% data train dan 20% data test.
+5. Melakukan augmentasi data.
+6. Merancang model CNN dengan arsitektur Residual Network 50 (ResNet50) yang dimana menerapkan metode transfer learning dalam            pembuatan model yang siap pakai (pre-trained model) untuk melakukan klasifikasi jenis penyakit kanker kulit.
+7. Melakukan pelatihan model dengan menggunakan data train.
+8. Melakukan evaluasi model berdasarkan Learning Curve.
+9. Melakukan visualisasi hasil evaluasi menggunakan Confusion Matrix
+   untuk didapatkan nilai akurasi, presisi, recall, dan F1-score.
+10. Hasil model disimpan ke dalam format h5 untuk diimplementasikan ke dalam tampilan sebuah website menggunakan framework Flask
+11. Melakukan pengujian model. Langkah-langkah pengujian model sebagai berikut:
+    a. Pada tahap awal, menghidupkan server menggunakan Flask sebagai back-end dan menampilkan tampilan web pada front-end melalui           URL: http://127.0.0.1:5000.
+b. Setelah server aktif, file model .h5 diload ke memori agar dapat digunakan dalam proses deteksi.
+c. Pengguna mengunggah gambar dengan format file .jpg, .jpeg, atau .png melalui formulir yang tersedia di halaman utama. Gambar
+   tersebut akan digunakan untuk memprediksi jenis kanker kulit.
+d. Setelah pengguna mengunggah gambar, gambar akan disimpan ke dalam folder uploads pada server dan file tersebut akan diberi nama
+   sesuai file asli yang diunggah.
+e. Setelah gambar disimpan, gambar akan diresize menjadi ukuran 224 x 224 piksel sesuai dengan ukuran yang dibutuhkan untuk model
+   ResNet50 untuk prediksi.
+f. Setelah gambar diresize, gambar juga dinormalisasi dengan mengubah nilai piksel ke rentang [0, 1].
+g. Setelah itu, website melakukan prediksi terhadap gambar yang telah dimasukkan oleh pengguna menggunakan model yang telah diload
+   sebelumnya. Model ini akan mengidentifikasi jenis kanker kulit yang terdapat pada gambar tersebut.
+h. Muncul segmen halaman website berikutnya dimana pengguna dapat melihat jenis kanker kulit beserta tingkat akurasi prediksinya. 
 
 ## Kesimpulan
 Berikut adalah kesimpulan dari hasil penelitian ini:
